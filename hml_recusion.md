@@ -42,3 +42,28 @@ $\mathcal{O}_{[a]F}(S) = [\cdot a \cdot]\mathcal{O}_{F}(S)$
 > It's a cool thing to mention that all this shit is 
 > Monotonic, Meaning that if $X \subseteq Y $ then $F(X)\subseteq F(Y)$
 ## Example 
+
+By Tarsky, all functions defined in Recursive HML have a unique minimum and maximum fix point,
+> this is because the function is monotonic!
+
+To find the minimum fix point, 
+the function $\mathcal{F}$ is applied repeatedly on $\empty$
+
+Because $\mathcal{F}$ is monotonic, $\empty \subseteq \mathcal{F}(\empty) $
+
+This means that because proc is finite, $\mathcal{F}^{n}(\empty) = \mathcal{F}^{n+1}(\empty)$
+
+--- 
+
+This is also applicable in reverse.
+
+> I spoke with anna, and suddenly 
+Because $F(Proc) \subseteq Proc$ not $Proc \subseteq F(Proc)$
+
+We can say that 
+$Proc \supe F(Proc)$ and $F(Proc) \supe F(F(Proc))$
+Then at some point, $F^{n}(Proc) = F^{n+1}(Proc)$
+
+---
+
+`This is great, The former method works by building up from the empty set... The latter works by intersecting from the Proc set`

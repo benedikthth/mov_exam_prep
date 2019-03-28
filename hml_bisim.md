@@ -1,7 +1,7 @@
 # HML & Bisimilarity
 ## Motivation
     HML is a way to logically define properties
-    that are, or are not satisfied by some properties 
+    that are, or are not satisfied by some processes. 
 
 
 ## Definition
@@ -10,16 +10,29 @@ $$ \varphi= tt~|~
             ff~|~
             \varphi_{1} \vee \varphi_{2} ~|~
             \varphi_{1} \wedge \varphi_{2}~|~
-            <\alpha>\varphi~|~
+            \langle\alpha\rangle\varphi~|~
             [\alpha]\varphi
 $$
+
 So by this definition, 
 We can say that this logic can describe the available actions of the process, up to some finite depth, called the modal depth. 
 
 
+> What about negation? 
+
+$ \mathtt{tt}^{c} = \mathtt{ff} $
+$ \mathtt{ff}^{c} = \mathtt{tt} $
+$ (F\wedge G)^{c} = F^{c} \vee G^{c}$
+$ (F\vee G)^{c} = F^{c}\wedge G^{c} $
+$ (\langle\alpha\rangle F)^{c} = [\alpha]F^{c}$
+$ ([\alpha]F)^{c} = \langle\alpha\rangle F^{c}$
+
+> We can intuit that if $P\models F$ then $P\not\models F^{c}$
+
+
 
 ## Example
-We can say that $$_{S}R_{S} \iff Prop(S) = Prop(T)$$
+We can say that $${S}\thicksim {T} \iff Prop(S) = Prop(T)$$
 Or, in human language, that humans understand, 
 S and T are bisimilar if they satisfy the same HM predicates.
 
