@@ -1,11 +1,32 @@
 # Timed Automata
-## Motivation
-She sid
+She said
 - Give an example of a Timed Automaton
 - Show the LTS [Action, clock update, ] 
 - Assume that when we do the update, we don't change the location
 - Talk about why $\wedge$ and not $\vee$
 - explain the equivalence classes
+- formalism of timed automata, and how to translate them into TLTS. 
+
+* Reachablility Problem. 
+
+A = TA = $(\mathcal{L, l_{0}, E, I})$ over a set of clocks $\mathcal{C}$
+
+A configuration $(l, v)$, it holds that 
+$(\mathcal{l_{0},v_{0}}) \rightarrow*(\mathcal{l, v})$ iff
+
+> The initial config can reach the (l, v) configuration iff
+
+$(\mathcal{v_{0}, [v_{0}]_{\equiv} })\Rightarrow^{*}(\mathcal{l,[v]_{\equiv}})$
+>it can reach the location $\mathcal{l}$, and the equivalence class of $v$  $^{*}$
+
+*we think*
+
+
+
+
+---
+---
+## Motivation
 
 Many real-time systems depend on timing. 
 InCCS timeouts were modelled using non-determinism
