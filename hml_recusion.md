@@ -41,7 +41,28 @@ $\mathcal{O}_{[a]F}(S) = [\cdot a \cdot]\mathcal{O}_{F}(S)$
 
 > It's a cool thing to mention that all this shit is 
 > Monotonic, Meaning that if $X \subseteq Y $ then $F(X)\subseteq F(Y)$
-## Example 
+
+
+
+`Why do we care that some function has a fixed point?`
+A function $F_{\varphi}(S)$ must have a fixed point, for a process to satisfy the $\varphi$
+
+
+`To find the minimum fix point`, we use the fact that 
+ $\empty \subseteq f(\empty)$
+then $f(\empty) \subseteq f(f(\empty))$
+then we apply $f~\text{to}~\empty$ until $f^{n}(\empty) = f^{n+1}(\empty)$ 
+then $f^{n}(\empty)$
+is your minimal fixed point.
+
+`To find the Maximum fixed point`, we use the fact that
+$f(Proc) \subseteq Proc$ And because f is monotonic, 
+$f(f(Proc)) \subseteq f(Proc)$
+
+Similarly, we can apply it until $f^{n}(Proc) = f^{n+1}(Proc)$.
+then $f^{n}(Proc)$ is your max fixed point.
+
+ ## Example 
 
 By Tarsky, all functions defined in Recursive HML have a unique minimum and maximum fix point,
 > this is because the function is monotonic!
