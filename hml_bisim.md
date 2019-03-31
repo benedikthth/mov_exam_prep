@@ -39,33 +39,52 @@ S and T are bisimilar if they satisfy the same HM predicates.
 This can be proven in two ways: 
 
 --- 
-
+<!-- 
 Assume that $ S \thicksim T $ and $S \models F~\text{for some } F \in \mathbf{M}$
-
 **We shall prove that since $S\thicksim T$, $S$ and $T$ satisfy the same formula**
-
 We only show for $F = [a]G$, some $\text{formula} \in \mathbf{M}$
-
-
 By using structural induction we prove  that $T \models F$
-
-Our $I$nductive $H$ypothesis( $IH$ ):
-
+Our $I$nductive$H$ypothesis( $IH$ ):
 $\forall P_{1}~\&~P_{2}, if P_{1} \thicksim P_{2}~\&~P_{1} \models F~\text{then}~P_{2}\models F$
-
 Using this hypothesis, we shall prove that $T \models [a]G$
-
 To this end, assume that $T\xrightarrow{a}T'$ for some $T'$
-
 We wish to show that $T' \models G$
-
 Now since $S \thicksim T$ and $T\xrightarrow{a}T'$ then $S\xrightarrow{a}S'$ and $S' \thicksim T'$ 
-
 Since we assumed that $S \models [a]G$ we have that $S' \models G$ 
-
 By our $IH$, since $S' \thicksim T'$ then $T' \models G$
+Therefore, each $T'$ such that $T\xrightarrow{a}T', T' \models G$ -->
 
-Therefore, each $T'$ such that $T\xrightarrow{a}T', T' \models G$
+If $P \thicksim Q$ & $P \models F \Rightarrow Q\models F$
+
+$\forall P, Q, F$, $P, Q$ are processes, $F$ is a HM Formula
+
+We shall prove this via structural induction.
+
+The base case is tt, and ff, which all processes trivially satisfy... 
+
+
+**Inductive hypothesis**
+$S\thicksim~T~\text{and}~S\models F_{1} \Rightarrow T\models F_{1}$
+
+**1 & 2 )** 
+$F = F_{1}~^{\wedge}_{\vee} F_{2}$
+Assume that $P \thicksim Q$ and $P\models F_{1}~^{\wedge}_{\vee} F_{2}$
+
+By def. $P\models F_{1}$ $^{and}_{or}$ $P\models F_{2}$
+
+By our *IH* $Q\models F_{1}$ $^{and}_{or}$ $Q \models F_{2}$
+
+Which implies $Q \models F_{1}~^{\wedge}_{\vee} F_{2}$
+**3)**
+$F = \langle \alpha \rangle\varphi$ : Assume that $P\thicksim Q$ and $P \models F$
+> Then by definition, there has to be an $\alpha$ transition that leads to a state $P'$ st. $P' \models \varphi$ 
+
+Because $P\thicksim Q$
+$\exists Q'~\text{st.}~ Q\xrightarrow{\alpha}Q'~\text{where} P'\thicksim Q'$ 
+
+By our *IH*, $Q'\models \varphi$, which implies that $Q\models \langle\alpha\rangle\varphi$
+
+$F = \langle\alpha\rangle\varphi \Rightarrow Q\models F$
 
 --- 
 
